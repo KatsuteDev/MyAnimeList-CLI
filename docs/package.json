@@ -8,7 +8,7 @@
         "update": "npm update -D && npm i --package-lock --ignore-scripts && npm run prune",
         "// -- build -- //": "",
         "build:jekyll": "bundle exec jekyll build",
-        "build:tw": "tailwindcss -i _src/dependencies/katsute/css/style.css -o _site/dependencies/katsute/css/tailwind.css -m",
+        "build:tw": "tailwindcss -i _src/dependencies/katsute/css/style.css -o _site/dependencies/katsute/css/style.css -m",
         "build": "node build.js && npm run build:jekyll && npm run build:tw",
         "// -- prepare -- //": "",
         "prepare": "npm run clean && npm run build",
