@@ -1,0 +1,22 @@
+{
+    "image": "maven:3-eclipse-temurin-17",
+    "features": {
+        "ghcr.io/devcontainers/features/node:1": {
+            "version": "20",
+            "nodeGypDependencies": false
+        }
+    },
+    "customizations": {
+        "vscode": {
+            "extensions": [
+                "vscjava.vscode-java-dependency",
+                "vscjava.vscode-java-debug",
+                "vscjava.vscode-maven",
+                "redhat.java"
+            ]
+        }
+    },
+    "postAttachCommand": "mvn compile; cd docs; npm i; cd ../",
+    "shutdownAction": "stopContainer",
+    "forwardPorts": [80]
+}

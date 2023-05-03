@@ -1,0 +1,39 @@
+livereload: true
+port: 8000
+
+disable_disk_cache: true
+strict_front_matter: true
+
+theme: null
+
+collections:
+  src:
+    output: true
+    permalink: /:path:output_ext
+
+defaults:
+  - scope:
+      path: ""
+    values:
+      layout: default
+
+exclude:
+  - _config.yml
+  - node_modules
+  - vendor # https://github.com/jekyll/jekyll/issues/5267#issuecomment-241379902
+  - Gemfile*
+  - package.json
+  - package-lock.json
+  - '*.js'
+
+compress_html:
+  clippings: all
+  comments: all
+  endings: []
+  ignore:
+    envs: []
+  blanklines: false
+  profile: false
+  startings: []
+
+url: mal.katsute.dev

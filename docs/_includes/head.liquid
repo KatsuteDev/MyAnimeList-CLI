@@ -1,0 +1,66 @@
+{% comment %}
+Copyright (C) 2023 Katsute <https://github.com/Katsute>
+{% endcomment %}
+
+{% comment %} metadata {% endcomment %}
+
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+{% if __repo.summary or page.description %}
+    <meta name="description" content="{{ default: page.description | strip }}">
+{% endif %}
+{% if page.hidden or layout.hidden %}
+    <meta name="robots" content="noindex, nofollow, none, noarchive, nosnippet">
+{% endif %}
+
+{% comment %} title {% endcomment %}
+
+{% if page.title %}
+    {% assign __title = page.title %}
+{% elsif layout.title %}
+    {% assign __title = layout.title %}
+{% endif %}
+
+<title>MyAnimeList CLI - {{ __title | strip }}</title>
+
+{% comment %} SEO {% endcomment %}
+
+<link rel="canonical" href="{{ site.url }}{{ page.url | remove: ".html" | remove: ".md" }}">
+
+<meta property="og:locale" content="en_US">
+<meta property="og:type" content="website">
+
+<meta name="og:title" content="{{ __title | strip }}">
+<meta name="og:description" content="{{ page.description | strip }}">
+<meta name="og:site_name" content="MyAnimeList CLI">
+
+<script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "WebSite",
+        "url": "{{ site.url }}",
+        "logo": "{{ site.url }}/favicon.png",
+        "name": "{{ __title | strip }}",
+        "description": "{{ repo.summary | default: page.description | strip }}"
+    }
+</script>
+
+{% comment %} dependencies {% endcomment %}
+
+<link rel="icon" type="image/svg+xml" href="{{ site.url }}/favicon.ico">
+<link rel="alternate icon" type="image/png" href="{{ site.url }}/favicon.png">
+
+<link rel="stylesheet" href="{{ site.url }}/dependencies/katsute/css/style.css">
+
+{% comment %} overrides {% endcomment %}
+
+{% if layout.css or page.css %}
+    <style>
+        {{ layout.css }}
+        {{ page.css }}
+    </style>
+{% endif %}
+
+{{ layout.head }}
+{{ page.head }}

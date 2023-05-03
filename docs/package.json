@@ -1,0 +1,35 @@
+{
+    "name": "docs",
+    "private": true,
+    "scripts": {
+        "// -- dev -- //": "",
+        "clean": "node clean.js",
+        "prune": "npm prune && npm i --package-lock --ignore-scripts",
+        "update": "npm update -D && npm i --package-lock --ignore-scripts && npm run prune",
+        "// -- build -- //": "",
+        "build:jekyll": "bundle exec jekyll build",
+        "build:tw": "tailwindcss -i _src/dependencies/katsute/css/style.css -o _site/dependencies/katsute/css/tailwind.css -m",
+        "build": "node build.js && npm run build:jekyll && npm run build:tw",
+        "// -- prepare -- //": "",
+        "prepare": "npm run clean && npm run build",
+        "// -- start -- //": "",
+        "start": "npm run prepare && bundle exec jekyll serve --incremental"
+    },
+    "repository": {
+        "type": "git",
+        "url": "git+https://github.com/KatsuteDev/MyAnimeList-CLI.git"
+    },
+    "author": "Katsute",
+    "license": "GPL-2.0-only",
+    "bugs": {
+        "url": "https://github.com/KatsuteDev/MyAnimeList-CLI/issues"
+    },
+    "homepage": "https://github.com/KatsuteDev/MyAnimeList-CLI#readme",
+    "externalDependencies": {
+        "jekyll-compress": "v3.1.0"
+    },
+    "devDependencies": {
+        "follow-redirects": "1.15.2",
+        "tailwindcss": "3.3.2"
+    }
+}
