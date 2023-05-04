@@ -16,7 +16,7 @@
             ]
         }
     },
-    "postAttachCommand": "mvn compile; cd docs; npm i; cd ../",
+    "postAttachCommand": "mvn clean; mvn package; install.sh; cd docs; npm i; cd ../",
     "shutdownAction": "stopContainer",
     "forwardPorts": [80]
 }

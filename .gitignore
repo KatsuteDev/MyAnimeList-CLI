@@ -2,6 +2,11 @@
 target
 *.iml
 
+bin
+staging
+
+/jq*
+
 docs/_layouts/compress.html
 docs/_site
 

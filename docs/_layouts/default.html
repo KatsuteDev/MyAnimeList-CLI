@@ -3,11 +3,26 @@
 layout: compress
 ---
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" class="flex min-h-full bg-slate-800">
     <head>
         {% include head.liquid %}
     </head>
-    <body>
+    <body class="flex flex-col
+                 min-h-full w-full overflow-auto">
+        {% include header.liquid %}
+        <div class="relative bg-slate-900
+                    md:before:absolute md:before:bg-slate-900 md:before:w-screen md:before:h-full md:before:left-[-99vw] md:before:-z-10
+                    [&>*]:p-4">
+            {% include navigation.liquid %}
+        </div>
+        <div class="grow">
+            <main class="p-4">
+                <article class="markdown">
+                    {{ content }}
+                </article>
+            </main>
+        </div>
+        {% include footer.liquid %}
         {% include foot.liquid %}
     </body>
 </html>
