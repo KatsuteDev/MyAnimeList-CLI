@@ -1,9 +1,389 @@
+@charset "utf-8";
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
 
+/* Copyright (C) 2023 Katsute <https://github.com/Katsute> */
+
 * {
 
     @apply scroll-smooth;
+    @apply outline-none;
+
+    font-family: "Segoe UI Adjusted", "Segoe UI", "Open Sans", Helvetica, Arial, sans-serif, "Segoe UI Emoji";
+
+}
+
+code *, pre * {
+
+    font-family: Consolas, 'Courier New', Courier, monospace, "Segoe UI Emoji" !important;
+}
+
+*::-webkit-scrollbar {
+
+    @apply h-[.4rem] w-[.4rem];
+
+}
+
+*::-webkit-scrollbar-track {
+
+    @apply bg-slate-900;
+
+}
+
+*::-webkit-scrollbar-thumb {
+
+    @apply bg-slate-300 rounded-sm;
+
+}
+
+/* markdown */
+
+.markdown {
+
+    @apply text-slate-300;
+
+}
+
+.markdown > * {
+
+    @apply last:pb-0;
+
+}
+
+.markdown p > a > img, p > a:has(img) {
+
+    @apply align-middle;
+
+}
+
+.markdown :not(a) > img {
+
+    @apply mb-2;
+
+}
+
+.markdown img {
+
+    @apply max-w-full;
+
+}
+
+.markdown h1, .markdown h2, .markdown h3, .markdown h4, .markdown h5, .markdown h6 {
+
+    @apply my-3 font-semibold leading-5;
+
+}
+
+.markdown h1, .markdown h2 {
+
+    @apply pb-1 border-b border-slate-700;
+
+}
+
+.markdown h1 {
+
+    @apply text-3xl;
+
+}
+
+.markdown h2 {
+
+    @apply text-2xl;
+
+}
+
+.markdown h3 {
+
+    @apply text-xl;
+
+}
+
+.markdown h4 {
+
+    @apply text-lg;
+
+}
+
+.markdown h5 {
+
+    @apply text-base;
+
+}
+
+.markdown h6 {
+
+    @apply text-base text-slate-400;
+
+}
+
+.markdown a {
+
+    @apply text-blue-400 hover:text-blue-600 hover:underline;
+    @apply ease-in-out duration-300;
+    @apply inline-block;
+
+}
+
+.markdown b, .markdown strong {
+
+    @apply font-semibold;
+
+}
+
+.markdown blockquote {
+
+    @apply mb-2 p-2 text-slate-300;
+    @apply rounded-r-md bg-slate-900;
+    @apply border-l-2 border-yellow-400;
+
+}
+
+.markdown blockquote > :last-child {
+
+    @apply pb-0;
+
+}
+
+.markdown :not(.highlight):not(a) > code {
+
+    @apply text-slate-300;
+    @apply rounded-md bg-slate-900 px-2 py-1;
+
+}
+
+.markdown code {
+
+    @apply break-words;
+
+}
+
+.markdown kbd {
+
+    @apply whitespace-nowrap;
+
+}
+
+.markdown ol, .markdown ul {
+
+    @apply pl-6 mb-3;
+    @apply list-disc;
+
+}
+
+.markdown li + li {
+
+    @apply mt-1;
+
+}
+
+.markdown p {
+
+    @apply pb-2;
+
+}
+
+.markdown p > br {
+
+    @apply first:hidden;
+
+}
+
+.markdown table {
+
+    @apply block table-fixed;
+
+    @apply mx-auto;
+    @apply mb-2;
+    @apply max-w-full overflow-x-auto;
+
+    width: max-content;
+
+    @apply border border-separate border-spacing-0 border-slate-900 rounded-md;
+    @apply bg-slate-900;
+
+}
+
+.markdown table::-webkit-scrollbar-track {
+
+    @apply bg-transparent;
+
+}
+
+.markdown table thead th {
+
+    @apply text-sm font-semibold;
+    @apply bg-transparent;
+
+    @apply border-b border-slate-800;
+
+}
+
+.markdown table tbody td {
+
+    @apply border-solid border-t border-slate-800;
+
+}
+
+.markdown table td, .markdown table th {
+
+    @apply first:pl-4 last:pr-4 px-2 py-2;
+
+    min-width: 250px;
+
+}
+
+.markdown div.highlighter-rouge {
+
+    margin-bottom: 0.5rem;
+
+}
+
+.markdown figure.highlight, .markdown div.highlight {
+
+    @apply bg-slate-900;
+
+    border-radius: 6px;
+    margin: 0px;
+    overflow: hidden;
+
+}
+
+.markdown figure.highlight pre, .markdown pre.highlight {
+
+    padding: 10px;
+    margin-left: 5px;
+    margin-right: 5px;
+    margin-bottom: 5px;
+    overflow: auto;
+    color: white;
+
+}
+
+.markdown figure.highlight pre::-webkit-scrollbar, .markdown pre.highlight::-webkit-scrollbar {
+
+    height: 6px;
+
+}
+
+.markdown figure.highlight pre::-webkit-scrollbar-track, .markdown pre.highlight::-webkit-scrollbar-track {
+
+    background: transparent;
+
+}
+
+.markdown figure.highlight pre::-webkit-scrollbar-thumb, .markdown pre.highlight::-webkit-scrollbar-thumb {
+
+    background: rgba(255, 255, 255, 0.2);
+    border-radius: 5px;
+
+}
+
+.markdown figure.highlight pre::-webkit-scrollbar-thumb:hover, .markdown pre.highlight::-webkit-scrollbar-thumb:hover {
+
+    background: rgba(255, 255, 255, 0.35);
+
+}
+
+.markdown figure.highlight pre code .hll, .markdown pre.highlight code .hll {
+
+    background-color: transparent !important;
+
+}
+
+.markdown figure.highlight pre code .c, .markdown pre.highlight code .c, .markdown figure.highlight pre code .c1, .markdown pre.highlight code .c1, .markdown figure.highlight pre code .cm, .markdown pre.highlight code .cm, .markdown figure.highlight pre code .cp, .markdown pre.highlight code .cp {
+
+    color: #616161 !important;
+    font-style: italic !important;
+    font-weight: normal !important;
+
+}
+
+.markdown figure.highlight pre code .cs, .markdown pre.highlight code .cs {
+
+    color: #616161 !important;
+    font-weight: bold !important;
+    font-style: italic !important;
+
+}
+
+.markdown figure.highlight pre code .err, .markdown pre.highlight code .err {
+
+    color: #ff5370 !important;
+    background-color: unset !important;
+
+}
+
+.markdown figure.highlight pre code .k, .markdown pre.highlight code .k, .markdown figure.highlight pre code .kc, .markdown pre.highlight code .kc, .markdown figure.highlight pre code .kd, .markdown pre.highlight code .kd, .markdown figure.highlight pre code .kn, .markdown pre.highlight code .kn, .markdown figure.highlight pre code .kp, .markdown pre.highlight code .kp, .markdown figure.highlight pre code .kr, .markdown pre.highlight code .kr, .markdown figure.highlight pre code .kt, .markdown pre.highlight code .kt {
+
+    color: #c792ea !important;
+    font-style: italic !important;
+    font-weight: normal !important;
+
+}
+
+.markdown figure.highlight pre code .m, .markdown pre.highlight code .m, .markdown figure.highlight pre code .mf, .markdown pre.highlight code .mf, .markdown figure.highlight pre code .mh, .markdown pre.highlight code .mh, .markdown figure.highlight pre code .mi, .markdown pre.highlight code .mi, .markdown figure.highlight pre code .mo, .markdown pre.highlight code .mo {
+
+    color: #f78c6c !important;
+    font-weight: normal !important;
+
+}
+
+.markdown figure.highlight pre code .n, .markdown pre.highlight code .n {
+
+    color: #eff !important;
+    font-weight: normal !important;
+
+}
+
+.markdown figure.highlight pre code .no, .markdown pre.highlight code .no {
+
+    color: #f78c6c !important;
+    font-weight: normal !important;
+
+}
+
+.markdown figure.highlight pre code .na, .markdown pre.highlight code .na, .markdown figure.highlight pre code .nf, .markdown pre.highlight code .nf {
+
+    color: #82aaff !important;
+    font-weight: normal !important;
+
+}
+
+.markdown figure.highlight pre code .nc, .markdown pre.highlight code .nc {
+
+    color: #ffcb6b !important;
+    font-weight: normal !important;
+    text-decoration: none !important;
+
+}
+
+.markdown figure.highlight pre code .nd, .markdown pre.highlight code .nd {
+
+    color: #c792ea !important;
+    font-weight: normal !important;
+
+}
+
+.markdown figure.highlight pre code .nn, .markdown pre.highlight code .nn {
+
+    color: #ffcb6b !important;
+    text-decoration: none !important;
+
+}
+
+.markdown figure.highlight pre code .o, .markdown pre.highlight code .o, .markdown figure.highlight pre code .p, .markdown pre.highlight code .p, .markdown figure.highlight pre code .pi, .markdown pre.highlight code .pi {
+
+    color: #89ddff !important;
+    font-weight: normal !important;
+    text-decoration: none !important;
+
+}
+
+.markdown figure.highlight pre code .s, .markdown pre.highlight code .s, .markdown figure.highlight pre code .sr, .markdown pre.highlight code .sr, .markdown figure.highlight pre code .sb, .markdown pre.highlight code .sb, .markdown figure.highlight pre code .sc, .markdown pre.highlight code .sc, .markdown figure.highlight pre code .sd, .markdown pre.highlight code .sd, .markdown figure.highlight pre code .s2, .markdown pre.highlight code .s2, .markdown figure.highlight pre code .se, .markdown pre.highlight code .se, .markdown figure.highlight pre code .sh, .markdown pre.highlight code .sh, .markdown figure.highlight pre code .si, .markdown pre.highlight code .si, .markdown figure.highlight pre code .sx, .markdown pre.highlight code .sx, .markdown figure.highlight pre code .nl, .markdown pre.highlight code .nl {
+
+    color: #c3e88d !important;
+    font-weight: normal !important;
 
 }

@@ -1,0 +1,24 @@
+<nav class="min-w-[200px] sticky top-0 p-8">
+    <ul>
+        <li>
+            <a href="/" class="flex text-white text-sm hover:underline">
+                <h5 class="font-mono">Quick Start</h5>
+            </a>
+        </li>
+        {% for top in site.data.navigation %}
+            {% assign nest = top | last %}
+            <li class="mt-8">
+                <a href="mal_{{ top | first }}" class="flex text-white text-sm hover:underline">
+                    <h5 class="font-mono">{{ top | first }}</h5>
+                </a>
+            </li>
+            {% for sub in nest %}
+                <li class="mt-1">
+                    <a
+                        href="mal_{{ top | first }}_{{ sub }}"
+                        class="flex text-blue-400 text-sm font-mono hover:underline">{{ sub }}</a>
+                </li>
+            {% endfor %}
+        {% endfor %}
+    </ul>
+</nav>

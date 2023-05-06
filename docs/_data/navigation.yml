@@ -1,0 +1,25 @@
+auth:
+anime:
+  - details
+  - list
+  - ranking
+  - seasonal
+  - suggested
+animelist:
+  - get
+  - update
+  - delete
+manga:
+  - details
+  - list
+  - ranking
+mangalist:
+  - get
+  - update
+  - delete
+user:
+  - get
+forum:
+  - board
+  - detail
+  - topic
