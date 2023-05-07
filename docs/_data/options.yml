@@ -1,0 +1,35 @@
+user:
+  flags: [-u, --user]
+  type: string
+  desc: The MyAnimeList username
+
+limit:
+  flags: [-l, --limit]
+  type: integer
+  desc: The maximum amount of results to return
+offset:
+  flags: [-o, --offset]
+  type: integer
+  desc: The results offset
+nsfw:
+  flags: [-W, --nsfw]
+  desc: Include NSFW results
+csv:
+  flags: [-c, --csv]
+  type: fields
+  desc: Output as CSV with a set of specified fields
+json:
+  flags: [-j, --json]
+  type: fields
+  desc: Output as JSON with a set of specified fields
+jq:
+  flags: [-q, --jq]
+  type: expression
+  desc: Format JSON using [jq](https://stedolan.github.io/jq/) syntax
+web:
+  flags: [-w, --web]
+  desc: Open the page in the browser
+
+yes:
+  flags: [-Y, --yes]
+  desc: Confirm operation without asking

@@ -1,8 +1,7 @@
 ---
-command: mal mangalist update <id>
-options:
-  - yes
 see-also:
   - mal mangalist view
+  - mal mangalist update
   - mal mangalist delete
 ---
+Retrieve user Manga lists.

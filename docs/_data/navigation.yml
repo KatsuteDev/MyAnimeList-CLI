@@ -1,25 +1,32 @@
 auth:
+  - login
+  - logout
+api:
 anime:
-  - details
+  - view
   - list
   - ranking
-  - seasonal
+  - season
   - suggested
 animelist:
-  - get
+  - view
   - update
   - delete
 manga:
-  - details
+  - view
   - list
   - ranking
 mangalist:
-  - get
+  - view
   - update
   - delete
 user:
-  - get
+  - view
 forum:
   - board
-  - detail
+  - view
   - topic
+help:
+  - fields
+  - formatting
+  - exporting

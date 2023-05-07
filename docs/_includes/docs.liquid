@@ -1,0 +1,44 @@
+{% capture newline %}
+{% endcapture %}
+{{ "# " | append: __title | markdownify }}
+
+{% if page.command %}
+{{ "```" | append: newline | append: page.command | append: " [flags]" | append: newline | append: "```" | append: newline | markdownify }}
+{% endif %}
+
+{{ content }}
+
+{% if page.options %}
+    {% assign buf = "### Options" | append: newline %}
+    {% for item in page.options %}
+        {% unless item.flags %}
+            {% assign option = site.data.options[item] %}
+        {% else %}
+            {% assign option = item %}
+        {% endunless %}
+        {% assign buf = buf | append: " * " %}
+        {% for flag in option.flags %}
+            {% assign buf = buf | append: "`" | append: flag %}
+            {% unless forloop.last %}
+                {% assign buf = buf | append: "`, " %}
+            {% else %}
+                {% if option.type %}
+                    {% assign buf = buf | append: " <" | append: option.type | append: ">" %}
+                {% endif %}
+                {% assign buf = buf | append: "`" %}
+            {% endunless %}
+        {% endfor %}
+        {% assign desc = option.desc | replace: newline, "<br>    " | replace: "<br>", newline | prepend: "    " %}
+        {% assign buf = buf | append: newline | append: newline | append: desc | append: newline %}
+    {% endfor %}
+    {{ buf | markdownify }}
+{% endif %}
+
+{% if page.see-also %}
+    {% assign buf = "### See also" | append: newline %}
+    {% for item in page.see-also %}
+        {% assign link = item | replace: ' ', '_' %}
+        {% assign buf = buf | append: " * [`" | append: item | append: "`](" | append: link | append: ")" | append: newline %}
+    {% endfor %}
+    {{ buf | markdownify }}
+{% endif %}

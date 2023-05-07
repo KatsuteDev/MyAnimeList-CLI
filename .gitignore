@@ -9,5 +9,6 @@ staging
 
 docs/_layouts/compress.html
 docs/_site
+docs/.jekyll*
 
 node_modules

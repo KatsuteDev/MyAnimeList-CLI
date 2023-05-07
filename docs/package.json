@@ -13,7 +13,7 @@
         "// -- prepare -- //": "",
         "prepare": "npm run clean && npm run build",
         "// -- start -- //": "",
-        "start": "npm run prepare && bundle exec jekyll serve --incremental"
+        "start": "npm run prepare && bundle exec jekyll serve"
     },
     "repository": {
         "type": "git",

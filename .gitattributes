@@ -1,1 +1,2 @@
-docs/_src/dependencies/katsute/** -linguist-vendored
+docs -linguist-documentation
+docs/**.md linguist-detectable

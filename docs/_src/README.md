@@ -1,8 +1,13 @@
 ---
+title: MyAnimeList CLI
 permalink: index.html
 ---
 
 This is an **unofficial** MyAnimeList CLI.
+
+Currently in development.
+
+---
 
 [@Katsute](https://github.com/Katsute) and [@KatsuteDev](https://github.com/KatsuteDev) are not affiliated with MyAnimeList.
 

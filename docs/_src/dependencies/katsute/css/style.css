@@ -38,11 +38,25 @@ code *, pre * {
 
 }
 
+/* docs */
+
+.markdown #options + ul {
+
+    @apply list-none;
+
+}
+
+.markdown #options + ul li {
+
+    @apply mb-6;
+
+}
+
 /* markdown */
 
 .markdown {
 
-    @apply text-slate-300;
+    @apply text-white;
 
 }
 
@@ -78,7 +92,7 @@ code *, pre * {
 
 .markdown h1, .markdown h2 {
 
-    @apply pb-1 border-b border-slate-700;
+    @apply pb-1 border-b border-white;
 
 }
 
@@ -120,7 +134,7 @@ code *, pre * {
 
 .markdown a {
 
-    @apply text-blue-400 hover:text-blue-600 hover:underline;
+    @apply text-blue-400 hover:underline;
     @apply ease-in-out duration-300;
     @apply inline-block;
 
@@ -148,7 +162,6 @@ code *, pre * {
 
 .markdown :not(.highlight):not(a) > code {
 
-    @apply text-slate-300;
     @apply rounded-md bg-slate-900 px-2 py-1;
 
 }
@@ -194,7 +207,6 @@ code *, pre * {
 
     @apply block table-fixed;
 
-    @apply mx-auto;
     @apply mb-2;
     @apply max-w-full overflow-x-auto;
 
@@ -228,9 +240,10 @@ code *, pre * {
 
 .markdown table td, .markdown table th {
 
-    @apply first:pl-4 last:pr-4 px-2 py-2;
+    @apply text-center;
+    @apply px-2 py-1;
 
-    min-width: 250px;
+    min-width: 150px;
 
 }
 
@@ -253,9 +266,6 @@ code *, pre * {
 .markdown figure.highlight pre, .markdown pre.highlight {
 
     padding: 10px;
-    margin-left: 5px;
-    margin-right: 5px;
-    margin-bottom: 5px;
     overflow: auto;
     color: white;
 

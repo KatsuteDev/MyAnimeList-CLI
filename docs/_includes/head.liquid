@@ -21,6 +21,7 @@ Copyright (C) 2023 Katsute <https://github.com/Katsute>
 {% elsif layout.title %}
     {% assign __title = layout.title %}
 {% endif %}
+{% capture __title %}{{ __title | replace: 'Mal_', 'mal_' | replace: '_', ' ' }}{% endcapture %}
 
 <title>MyAnimeList CLI - {{ __title | strip }}</title>
 
