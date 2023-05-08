@@ -34,6 +34,15 @@
     {{ buf | markdownify }}
 {% endif %}
 
+{% if page.examples %}
+    {% assign buf = "### Examples" | append: newline | append: "```sh" | append: newline %}
+    {% for item in page.examples %}
+        {% assign buf = buf | append: item | append: newline %}
+    {% endfor %}
+    {% assign buf = buf | strip | append: newline | append: "```" %}
+    {{ buf | markdownify }}
+{% endif %}
+
 {% if page.see-also %}
     {% assign buf = "### See also" | append: newline %}
     {% for item in page.see-also %}

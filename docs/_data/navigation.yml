@@ -1,3 +1,6 @@
+mal:
+  - fields
+  - formatting
 auth:
   - login
   - logout
@@ -24,9 +27,5 @@ user:
   - view
 forum:
   - board
-  - view
   - topic
-help:
-  - fields
-  - formatting
-  - exporting
+  - list

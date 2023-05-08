@@ -27,6 +27,7 @@ options:
       |`start`|
   - limit
   - offset
+  - nsfw
   - csv
   - json
   - jq

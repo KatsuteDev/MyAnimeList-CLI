@@ -12,6 +12,7 @@ options:
       |`users`|
   - limit
   - offset
+  - nsfw
   - csv
   - json
   - jq

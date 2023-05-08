@@ -3,6 +3,7 @@ command: mal anime list <query>
 options:
   - limit
   - offset
+  - nsfw
   - csv
   - json
   - jq

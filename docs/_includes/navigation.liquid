@@ -8,22 +8,18 @@ Copyright (C) 2023 Katsute <https://github.com/Katsute>
                 <h5 class="font-mono">Quick Start</h5>
             </a>
         </li>
-        <li class="mt-8">
-            <a href="mal" class="flex text-white text-sm hover:underline">
-                <h5 class="font-mono">mal</h5>
-            </a>
-        </li>
         {% for top in site.data.navigation %}
-            {% assign nest = top | last %}
+            {% assign k = top | first %}
+            {% assign v = top | last %}
             <li class="mt-8">
-                <a href="mal_{{ top | first }}" class="flex text-white text-sm hover:underline">
-                    <h5 class="font-mono">{{ top | first }}</h5>
+                <a href="/{% if k != "mal" %}mal_{% endif %}{{ k }}" class="flex text-white text-sm hover:underline">
+                    <h5 class="font-mono">{{ k }}</h5>
                 </a>
             </li>
-            {% for sub in nest %}
+            {% for sub in v %}
                 <li class="mt-1">
                     <a
-                        href="mal_{{ top | first }}_{{ sub }}"
+                        href="/{% if k != "mal" %}mal_{% endif %}{{ k }}_{{ sub }}"
                         class="flex text-blue-400 text-sm font-mono hover:underline">{{ sub }}</a>
                 </li>
             {% endfor %}

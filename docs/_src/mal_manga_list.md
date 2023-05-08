@@ -3,6 +3,7 @@ command: mal manga list <query>
 options:
   - limit
   - offset
+  - nsfw
   - csv
   - json
   - jq

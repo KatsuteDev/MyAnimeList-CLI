@@ -9,13 +9,13 @@ layout: compress
     </head>
     <body class="flex flex-col overflow-auto w-full">
         <div class="bg-slate-900">
-            <div class="container mx-auto max-w-screen-xl
+            <div class="container mx-auto max-w-screen-lg
                         flex flex-row grow">
                 {% include header.liquid %}
             </div>
         </div>
-        <div class="container mx-auto max-w-screen-xl
-                    flex flex-row grow h-full">
+        <div class="container mx-auto max-w-screen-lg
+                    flex flex-col sm:flex-row grow h-full">
             <div class="relative bg-slate-900
                         md:before:absolute md:before:bg-slate-900 md:before:w-screen md:before:h-full md:before:left-[-99vw] md:before:-z-10
                         [&>*]:p-4">
@@ -34,7 +34,7 @@ layout: compress
             </div>
         </div>
         <div class="bg-slate-900">
-            <div class="container mx-auto max-w-screen-xl
+            <div class="container mx-auto max-w-screen-lg
                         flex flex-row grow">
                 {% include footer.liquid %}
             </di>

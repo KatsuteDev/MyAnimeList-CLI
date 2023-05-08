@@ -3,6 +3,7 @@ command: mal manga ranking <ranking>
 options:
   - limit
   - offset
+  - nsfw
   - csv
   - json
   - jq

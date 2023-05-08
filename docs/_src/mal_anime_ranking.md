@@ -3,6 +3,7 @@ command: mal anime ranking <ranking>
 options:
   - limit
   - offset
+  - nsfw
   - csv
   - json
   - jq
