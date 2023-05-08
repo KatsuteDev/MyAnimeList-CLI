@@ -1,2 +1,2 @@
-docs/** -linguist-documentation
-docs/**.md linguist-detectable
+docs/* -linguist-documentation
+docs/_src/*.md linguist-detectable
