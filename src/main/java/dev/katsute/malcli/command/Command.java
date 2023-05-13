@@ -16,20 +16,24 @@
  * 51 Franklin Street, Fifth Floor, Boston, MA 02110-1301 USA.
  */
 
-package dev.katsute.malcli;
+package dev.katsute.malcli.command;
 
-import java.util.logging.Logger;
+import java.util.Arrays;
 
-final class Main {
+public abstract class Command {
 
-    private static final Logger logger = Logger.getGlobal();
+    private final String[] flags;
 
-    public static void main(final String[] args) {
-        try{
-
-        }catch(final Throwable e){
-
-        }
+    public Command(final String... flags){
+        this.flags = flags;
     }
+
+    public final String[] getFlags(){
+        return Arrays.copyOf(flags, flags.length);
+    }
+
+    public abstract String help();
+
+    public abstract String exec(final String... args);
 
 }
