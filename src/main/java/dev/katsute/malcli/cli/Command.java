@@ -19,6 +19,7 @@
 package dev.katsute.malcli.cli;
 
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.List;
 import java.util.Map;
 
@@ -53,17 +54,22 @@ public abstract class Command {
         return help;
     }
 
-    public final String execute(final CLI cli, final String... args){
+    public final String execute(final CLI cli){
+        final String[] args = Arrays.copyOfRange(cli.getCommand().split(" "), command.split(" ").length, cli.getCommand().split(" ").length);
+
         // help
         if(args.length == 0)
             return help();
+
         // check required flags
         for(final Option<?> required : this.required)
             if(!cli.hasOption(required))
                 throw new CLIException(String.format("Missing required option %s", required.getLongFlag()));
+
         // check args count
         if(args.length != this.args)
             throw new CLIException(String.format("Expected %d arguments but got %d", this.args, args.length));
+
         // delegate
         return exec(cli, args);
     }
