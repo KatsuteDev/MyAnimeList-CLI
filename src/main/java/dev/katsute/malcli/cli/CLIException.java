@@ -16,24 +16,12 @@
  * 51 Franklin Street, Fifth Floor, Boston, MA 02110-1301 USA.
  */
 
-package dev.katsute.malcli.command;
+package dev.katsute.malcli.cli;
 
-import java.util.Arrays;
+public final class CLIException extends RuntimeException {
 
-public abstract class Command {
-
-    private final String[] flags;
-
-    public Command(final String... flags){
-        this.flags = flags;
+    public CLIException(final String message){
+        super(message);
     }
-
-    public final String[] getFlags(){
-        return Arrays.copyOf(flags, flags.length);
-    }
-
-    public abstract String help();
-
-    public abstract String exec(final String... args);
 
 }

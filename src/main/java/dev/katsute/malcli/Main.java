@@ -20,15 +20,33 @@ package dev.katsute.malcli;
 
 import java.util.logging.Logger;
 
+import dev.katsute.malcli.cli.CLI;
+import dev.katsute.malcli.cli.Command;
+import dev.katsute.malcli.cli.CLIException;
+
 final class Main {
 
     private static final Logger logger = Logger.getGlobal();
 
+    private static final Command[] commands = {};
+
     public static void main(final String[] args) {
         try{
+            // logging
 
+            // exec
+            final CLI cli = CLI.parse(args);
+            final String cmd = cli.getCommand();
+            Command match;
+            for(final Command command : commands){
+                // check starts with
+
+                // match most specific command
+            }
+        }catch(final CLIException e){
+            // log err
         }catch(final Throwable e){
-
+            // crash
         }
     }
 

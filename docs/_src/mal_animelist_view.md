@@ -1,5 +1,5 @@
 ---
-command: mal animelist <id>
+command: mal animelist view <id>
 options:
   - user
   - flags: [-S, --status]
