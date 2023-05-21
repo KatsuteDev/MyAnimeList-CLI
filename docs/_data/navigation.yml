@@ -23,6 +23,8 @@ mangalist:
   - view
   - update
   - delete
+character:
+  - view
 user:
   - view
 forum:
