@@ -25,6 +25,8 @@ mangalist:
   - delete
 character:
   - view
+people:
+  - view
 user:
   - view
 forum:
