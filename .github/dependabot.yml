@@ -34,3 +34,13 @@ updates:
       - dependency-name: "@types/node"
         update-types:
           - version-update:semver-patch
+  - package-ecosystem: bundler
+    directory: /docs
+    labels: [dependencies]
+    assignees: [Katsute]
+    schedule:
+      interval: weekly
+      day: monday
+      time: "07:00"
+      timezone: US/Eastern
+    open-pull-requests-limit: 10

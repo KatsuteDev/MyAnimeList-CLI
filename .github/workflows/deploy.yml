@@ -23,7 +23,7 @@ jobs:
       - name: Install Ruby
         uses: ruby/setup-ruby@v1
         with:
-          ruby-version: "3.1"
+          ruby-version: "3.2"
 
       - name: Bundle Install
         run: |
@@ -38,6 +38,7 @@ jobs:
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
           publish_dir: ./docs/_site
+          cname: mal.katsute.dev
           force_orphan: true
           user_name: mashiro-san
           user_email: mashiro-san@users.noreply.github.com
