@@ -20,6 +20,9 @@ updates:
       time: "07:00"
       timezone: US/Eastern
     open-pull-requests-limit: 10
+    groups:
+      junit:
+        patterns: [org.junit.jupiter:*]
   - package-ecosystem: npm
     directory: /docs
     labels: [dependencies]
